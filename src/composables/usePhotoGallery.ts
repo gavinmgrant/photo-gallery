@@ -28,23 +28,6 @@ export const usePhotoGallery = () => {
 
   watch(photos, cachePhotos)
 
-  // const loadSaved = async () => {
-  //   const photoList = await Preferences.get({ key: PHOTO_STORAGE })
-  //   const photosInPreferences = photoList.value
-  //     ? JSON.parse(photoList.value)
-  //     : []
-
-  //   for (const photo of photosInPreferences) {
-  //     const file = await Filesystem.readFile({
-  //       path: photo.filepath,
-  //       directory: Directory.Data,
-  //     })
-  //     photo.webviewPath = `data:image/jpeg;base64,${file.data}`
-  //   }
-
-  //   photos.value = photosInPreferences
-  // }
-
   const loadSaved = async () => {
     const photoList = await Preferences.get({ key: PHOTO_STORAGE })
     const photosInPreferences = photoList.value
